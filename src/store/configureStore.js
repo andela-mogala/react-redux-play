@@ -2,10 +2,10 @@ import { createStore, applyMiddleware } from 'redux';
 import rootReducer from '../reducers';
 import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 
-export default function configureStore(initialStore) {
-  return (
+export default function configureStore(initialState) {
+  return createStore(
     rootReducer,
-    initialStore,
+    initialState,
     applyMiddleware(reduxImmutableStateInvariant())
   );
 }
